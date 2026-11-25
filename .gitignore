@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+calib/
+data/
+.DS_Store
+.~lock.*#
