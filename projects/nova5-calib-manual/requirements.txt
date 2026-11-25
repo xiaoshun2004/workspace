@@ -1,0 +1,15 @@
+# Nova-5 eye-in-hand calibration
+#
+#   pip install -r requirements.txt
+#
+# The OpenCV bound is not cosmetic and is enforced at import in core/handeye.py:
+#   < 4.7  has no cv2.aruco.CharucoDetector
+#   < 4.8  CharucoBoard.matchImagePoints returns wrong object points when
+#          called from Python (opencv/opencv PR #23138), which corrupts every
+#          board pose and the intrinsic solve
+#   >= 5.0 does not expose cv2.calibrateHandEye in the Python bindings, which
+#          is the solve this app is built around
+opencv-python>=4.8,<5
+numpy>=1.24
+PySide6>=6.5
+pyrealsense2>=2.54
