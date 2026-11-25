@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="920" viewBox="0 0 1280 920" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrSlate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#334155"/>
+    </marker>
+    <marker id="arrBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#0369a1"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="920" fill="#ffffff"/>
+
+  <text x="640" y="42" text-anchor="middle" font-size="26" font-weight="bold" fill="#0f172a">Nova5 纸杯视觉抓取 v0 —— 布局示意图</text>
+  <text x="640" y="70" text-anchor="middle" font-size="14" fill="#64748b">示意图非等比例；尺寸为 v0 设计值（D405：理想深度 7–50cm，FOV 87°×58°）</text>
+
+  <text x="170" y="112" font-size="16" font-weight="bold" fill="#0f172a">3D 示意（机器人从 +X 侧水平接近）</text>
+  <text x="830" y="112" font-size="16" font-weight="bold" fill="#0f172a">俯视图（操作面，12px = 1cm）</text>
+
+  <!-- ================= 左：3D 等轴测 ================= -->
+  <g>
+    <!-- 长方体底面 = 取放区 (25cm x 18cm)，高 25cm -->
+    <polygon points="320,660 570,760 390,832 140,732" fill="#e2e8f0"/>
+    <polygon points="320,660 140,732 140,482 320,410" fill="#94a3b8" opacity="0.55"/>
+    <polygon points="320,660 570,760 570,510 320,410" fill="#cbd5e1" opacity="0.70"/>
+    <polygon points="320,410 570,510 390,582 140,482" fill="#f1f5f9" opacity="0.90"/>
+
+    <g stroke="#475569" stroke-width="2" fill="none">
+      <line x1="320" y1="660" x2="570" y2="760"/>
+      <line x1="320" y1="660" x2="140" y2="732"/>
+      <line x1="320" y1="660" x2="320" y2="410"/>
+      <line x1="570" y1="760" x2="390" y2="832"/>
+      <line x1="140" y1="732" x2="390" y2="832"/>
+      <line x1="390" y1="832" x2="390" y2="582"/>
+      <line x1="570" y1="760" x2="570" y2="510"/>
+      <line x1="140" y1="732" x2="140" y2="482"/>
+      <line x1="320" y1="410" x2="570" y2="510"/>
+      <line x1="320" y1="410" x2="140" y2="482"/>
+      <line x1="570" y1="510" x2="390" y2="582"/>
+      <line x1="140" y1="482" x2="390" y2="582"/>
+    </g>
+
+    <!-- 纸杯：杯口 Ø80、杯底 Ø60、高 110mm（居中示意） -->
+    <polygon points="325,746 385,746 395,636 315,636" fill="#f8d8b0" stroke="#b45309" stroke-width="2"/>
+    <ellipse cx="355" cy="746" rx="30" ry="12" fill="#f8d8b0" stroke="#b45309" stroke-width="2"/>
+    <ellipse cx="355" cy="636" rx="40" ry="16" fill="#fdf3e0" stroke="#b45309" stroke-width="2"/>
+
+    <!-- 抓取高度：桌面 +40mm -->
+    <line x1="322" y1="706" x2="389" y2="706" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
+    <circle cx="355" cy="706" r="3.5" fill="#dc2626"/>
+    <text x="430" y="712" font-size="12" fill="#dc2626">抓取高 +40mm（Ø≈72mm）</text>
+
+    <!-- 放置点 -->
+    <rect x="245" y="677" width="12" height="12" fill="#059669"/>
+    <line x1="245" y1="683" x2="105" y2="690" stroke="#059669" stroke-width="1.2"/>
+    <text x="55" y="693" font-size="12" fill="#059669">放置点（固定坐标）</text>
+
+    <!-- 相机与高度 -->
+    <line x1="355" y1="512" x2="355" y2="742" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arrSlate)"/>
+    <rect x="335" y="482" width="40" height="28" rx="6" fill="#0ea5e9" stroke="#ffffff" stroke-width="2"/>
+    <text x="355" y="468" text-anchor="middle" font-size="13" fill="#0369a1">D405（垂直朝下）</text>
+    <text x="368" y="545" font-size="13" fill="#334155">≈25cm</text>
+
+    <!-- 视场锥 -->
+    <line x1="355" y1="506" x2="570" y2="754" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.65"/>
+    <line x1="355" y1="506" x2="140" y2="726" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.65"/>
+    <text x="590" y="690" font-size="12" fill="#0369a1">FOV 87°×58°</text>
+
+    <!-- 杯子标注 -->
+    <line x1="400" y1="646" x2="422" y2="664" stroke="#b45309" stroke-width="1"/>
+    <text x="425" y="668" font-size="13" fill="#92400e">杯：Ø80 / Ø60mm，H≈110mm</text>
+
+    <!-- 底面标注 -->
+    <line x1="388" y1="830" x2="355" y2="846" stroke="#334155" stroke-width="1"/>
+    <text x="355" y="862" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">取放区（桌面）25×18cm</text>
+  </g>
+
+  <!-- ================= 右：俯视图 ================= -->
+  <g>
+    <rect x="700" y="400" width="300" height="216" fill="#eef2ff" stroke="#4338ca" stroke-width="2"/>
+    <text x="850" y="430" text-anchor="middle" font-size="15" font-weight="bold" fill="#3730a3">取放区 25×18cm</text>
+
+    <!-- 杯：俯视 = 杯口圆 Ø80 + 杯底圆 Ø60 -->
+    <circle cx="850" cy="508" r="36" fill="none" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <circle cx="850" cy="508" r="48" fill="#fdf3e0" stroke="#b45309" stroke-width="2"/>
+    <line x1="850" y1="504" x2="850" y2="512" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="846" y1="508" x2="854" y2="508" stroke="#94a3b8" stroke-width="1"/>
+    <text x="905" y="576" font-size="12" fill="#92400e">杯口 Ø80mm</text>
+
+    <!-- 接近方向：从 +X 侧水平接近 -->
+    <line x1="1030" y1="516" x2="899" y2="516" stroke="#dc2626" stroke-width="3" marker-end="url(#arrRed)"/>
+    <circle cx="946" cy="516" r="5" fill="#dc2626"/>
+    <line x1="946" y1="516" x2="1010" y2="482" stroke="#dc2626" stroke-width="1"/>
+    <text x="1010" y="474" font-size="12" fill="#dc2626">预抓取点（退后 80mm）</text>
+    <text x="972" y="538" text-anchor="middle" font-size="12" fill="#dc2626">水平接近（沿 X）</text>
+
+    <!-- 机器人基座 -->
+    <rect x="1035" y="486" width="60" height="60" fill="#475569" rx="4"/>
+    <text x="1065" y="562" text-anchor="middle" font-size="12" fill="#334155">Nova5 基座</text>
+
+    <!-- 放置点 -->
+    <rect x="740" y="456" width="12" height="12" fill="#059669"/>
+    <line x1="738" y1="462" x2="648" y2="470" stroke="#059669" stroke-width="1"/>
+    <text x="630" y="472" text-anchor="end" font-size="12" fill="#059669">放置点（固定坐标）</text>
+
+    <!-- 尺寸标注 -->
+    <line x1="700" y1="392" x2="1000" y2="392" stroke="#334155" stroke-width="1.2" marker-start="url(#arrSlate)" marker-end="url(#arrSlate)"/>
+    <text x="850" y="384" text-anchor="middle" font-size="12" fill="#334155">25cm</text>
+    <line x1="688" y1="400" x2="688" y2="616" stroke="#334155" stroke-width="1.2" marker-start="url(#arrSlate)" marker-end="url(#arrSlate)"/>
+    <text x="672" y="508" text-anchor="middle" font-size="12" fill="#334155" transform="rotate(-90 672 508)">18cm</text>
+
+    <text x="850" y="646" text-anchor="middle" font-size="12" fill="#64748b">D405 在 25cm 高覆盖约 47×28cm，取放区取中间 25×18cm</text>
+  </g>
+
+  <!-- ================= 图例 ================= -->
+  <g font-size="12" fill="#334155">
+    <line x1="170" y1="826" x2="210" y2="826" stroke="#dc2626" stroke-width="3"/>
+    <text x="216" y="830">接近/抓取</text>
+    <line x1="330" y1="826" x2="370" y2="826" stroke="#0ea5e9" stroke-width="3"/>
+    <text x="376" y="830">相机/视场</text>
+    <rect x="500" y="819" width="12" height="12" fill="#059669"/>
+    <text x="518" y="830">放置点</text>
+    <ellipse cx="640" cy="824" rx="14" ry="5" fill="#f8d8b0" stroke="#b45309" stroke-width="1.5"/>
+    <text x="660" y="830">纸杯</text>
+    <text x="790" y="830" fill="#64748b">虚线 = 标注 / 构造线</text>
+  </g>
+
+  <text x="170" y="880" font-size="13" fill="#475569">左：相机垂直朝下；杯顶距相机约 14cm。杯可放区内任意位置（图为居中示意）。</text>
+  <text x="830" y="880" font-size="13" fill="#475569">右：YOLO 框中心 → 单应 → 机器人 XY；Z = 桌面 + 40mm（固定）。</text>
+</svg>
