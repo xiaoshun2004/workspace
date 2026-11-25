@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 本地构建产物 / 文档镜像（体积大, 不进仓库）
+lebai-sdk-docs/
+
+# 本地工具配置
+.claude/
+.trae/
+
+# 日志
+*.log
