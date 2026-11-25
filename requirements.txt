@@ -1,0 +1,2 @@
+# PC 上位机 - 乐白 LMG-90 夹爪控制（经 DOBOT Nova）
+# 通讯层仅依赖 Python 标准库（socket），无需第三方包。
